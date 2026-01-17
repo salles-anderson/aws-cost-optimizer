@@ -90,7 +90,7 @@ By stopping resources during off-hours (nights and weekends), you can reduce cos
 ## Architecture
 
 <div align="center">
-  <img src="docs/architecture.png" alt="Architecture Diagram" width="800"/>
+  <img src="docs/AWS Cost Optimizer - Automated Resource Scheduling.png" alt="Architecture Diagram" width="800"/>
 </div>
 
 ### Components
