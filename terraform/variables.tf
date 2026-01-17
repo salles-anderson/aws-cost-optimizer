@@ -16,22 +16,28 @@ variable "environment_tag_key" {
   default     = "Environment"
 }
 
-variable "target_environments" {
-  description = "Environments to stop/start"
-  type        = list(string)
-  default     = ["dev", "homolog", "staging"]
+variable "target_environment" {
+  description = "Environment tag value to target (e.g., dev, homolog, staging)"
+  type        = string
+  default     = "dev"
+}
+
+variable "schedule_timezone" {
+  description = "Timezone for schedules"
+  type        = string
+  default     = "America/Sao_Paulo"
 }
 
 variable "stop_schedule" {
-  description = "Cron expression for stopping resources (UTC)"
+  description = "Cron expression for stopping resources"
   type        = string
-  default     = "cron(0 22 ? * MON-FRI *)" # 22:00 UTC = 19:00 BRT
+  default     = "cron(0 19 ? * MON-FRI *)"
 }
 
 variable "start_schedule" {
-  description = "Cron expression for starting resources (UTC)"
+  description = "Cron expression for starting resources"
   type        = string
-  default     = "cron(0 11 ? * MON-FRI *)" # 11:00 UTC = 08:00 BRT
+  default     = "cron(0 8 ? * MON-FRI *)"
 }
 
 variable "enable_scheduler" {
