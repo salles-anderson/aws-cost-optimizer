@@ -760,6 +760,15 @@ aws cloudwatch put-metric-alarm \
 4. **Use AWS Organizations** SCPs to restrict actions
 5. **Enable CloudTrail** for audit logging
 
+## Related Resources
+
+- [AWS Instance Scheduler](https://aws.amazon.com/solutions/implementations/instance-scheduler-on-aws/) - AWS official solution for scheduling EC2 and RDS instances
+- [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) - Analyze and manage AWS costs
+- [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/) - Cost optimization recommendations
+- [AWS Well-Architected Framework - Cost Optimization](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html) - Best practices for cost optimization
+- [EventBridge Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html) - AWS EventBridge Scheduler documentation
+- [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) - Terraform Cloud documentation
+
 ## Contributing
 
 1. Fork the repository
