@@ -1,0 +1,19 @@
+project_name = "aws-cost-optimizer"
+aws_region   = "us-east-1"
+
+environment_tag_key  = "Environment"
+target_environments  = ["dev", "homolog", "staging"]
+
+# Stop resources at 19:00 BRT (22:00 UTC)
+stop_schedule = "cron(0 22 ? * MON-FRI *)"
+
+# Start resources at 08:00 BRT (11:00 UTC)
+start_schedule = "cron(0 11 ? * MON-FRI *)"
+
+enable_scheduler = true
+
+tags = {
+  Owner       = "devops"
+  CostCenter  = "finops"
+  Purpose     = "cost-optimization"
+}
