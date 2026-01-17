@@ -1,52 +1,37 @@
-output "stop_lambda_arn" {
-  description = "ARN of the Stop Lambda function"
-  value       = aws_lambda_function.stop.arn
+output "ec2_scheduler" {
+  description = "EC2 Scheduler module outputs"
+  value = {
+    lambda_function_name = module.ec2_scheduler.lambda_function_name
+    lambda_function_arn  = module.ec2_scheduler.lambda_function_arn
+  }
 }
 
-output "start_lambda_arn" {
-  description = "ARN of the Start Lambda function"
-  value       = aws_lambda_function.start.arn
+output "rds_scheduler" {
+  description = "RDS Scheduler module outputs"
+  value = {
+    lambda_function_name = module.rds_scheduler.lambda_function_name
+    lambda_function_arn  = module.rds_scheduler.lambda_function_arn
+  }
 }
 
-output "stop_lambda_name" {
-  description = "Name of the Stop Lambda function"
-  value       = aws_lambda_function.stop.function_name
+output "documentdb_scheduler" {
+  description = "DocumentDB Scheduler module outputs"
+  value = {
+    lambda_function_name = module.documentdb_scheduler.lambda_function_name
+    lambda_function_arn  = module.documentdb_scheduler.lambda_function_arn
+  }
 }
 
-output "start_lambda_name" {
-  description = "Name of the Start Lambda function"
-  value       = aws_lambda_function.start.function_name
-}
-
-output "lambda_role_arn" {
-  description = "ARN of the Lambda IAM role"
-  value       = aws_iam_role.lambda_role.arn
-}
-
-output "scheduler_role_arn" {
-  description = "ARN of the EventBridge Scheduler IAM role"
-  value       = aws_iam_role.scheduler_role.arn
-}
-
-output "stop_schedule_arn" {
-  description = "ARN of the Stop schedule"
-  value       = var.enable_scheduler ? aws_scheduler_schedule.stop[0].arn : null
-}
-
-output "start_schedule_arn" {
-  description = "ARN of the Start schedule"
-  value       = var.enable_scheduler ? aws_scheduler_schedule.start[0].arn : null
-}
-
-output "target_environments" {
-  description = "Environments being managed"
-  value       = var.target_environments
+output "target_environment" {
+  description = "Environment being managed"
+  value       = var.target_environment
 }
 
 output "schedules" {
   description = "Configured schedules"
   value = {
-    stop  = var.stop_schedule
-    start = var.start_schedule
+    timezone = var.schedule_timezone
+    stop     = var.stop_schedule
+    start    = var.start_schedule
   }
 }
